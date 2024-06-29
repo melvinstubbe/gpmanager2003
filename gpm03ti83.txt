@@ -1,0 +1,498 @@
+:Clear Entries
+ClrHome
+AxesOff
+FnOff 
+CoordOff
+ClrDraw
+Text(28,18,"STUBBE PRESENTS:
+For(A,0,500)
+End
+ClrDraw
+Text(21,16,"GRANDPRIX MANAGER
+Text(35,40,"2003
+Text(56,1,"F1 - FIA
+For(A,0,500)
+End
+ClrDraw
+2003üJ
+0->P
+1->R
+0->T
+0->H
+0->K
+0->D
+0->A
+0->?
+
+Menu("CHOOSE TEAM:","FERRARI",1,"JAGUAR",2,"WILLIAMS",3,"MINARDI",4,"SAUBER",5,"RENAULT",6,"MORE...",7)
+Lbl 7
+Menu("CHOOSE TEAM:","MCLAREN",8,"TOYOTA",9,"JORDAN",10,"BAR",11)
+
+Lbl 1
+1->A
+Goto A
+Lbl 2
+2->A
+Goto A
+Lbl 3
+3->A
+Goto A
+Lbl 4
+4->A
+Goto A
+Lbl 5
+5->A
+Goto A
+Lbl 6
+6->A
+Goto A
+Lbl 8
+7->A
+Goto A
+Lbl 9
+8->A
+Goto A
+Lbl 10
+9->A
+Goto A
+Lbl 11
+10->A
+Goto A
+
+Lbl A
+If R>16
+Goto E
+If A=1
+Then
+15000000->B
+2000000->C
+5000000->N
+70->E
+65->F
+1000000->U
+End
+If A=2
+Then
+12500000->B
+1000000->C
+6000000->N
+48->E
+61->F
+2000000->U
+End
+If A=3
+Then
+10000000->B
+2000000->C
+5000000->N
+39->E
+35->F
+1000000->U
+End
+If A=4
+Then
+5000000->B
+500000->C
+1000000->N
+43->E
+40->F
+500000->U
+End
+If A=5
+Then
+6000000->B
+1000000->C
+2000000->N
+40->E
+36->F
+300000->U
+End
+If A=6
+Then
+8000000->B
+2000000->C
+2000000->N
+45->E
+43->F
+100000->U
+End
+If A=7
+Then
+15000000->B
+2000000->C
+5000000->N
+45->E
+46->F
+200000->U
+End
+If A=8
+Then
+20000000->B
+2000000->C
+6000000->N
+38->E
+34->F
+400000->U
+End
+If A=9
+Then
+20000000->B
+500000->C
+1000000->N
+37->E
+35->F
+200000->U
+End
+If A=10
+Then
+20000000->B
+5000000->C
+10000000->N
+38->E
+36->F
+300000->U
+End
+
+Lbl A
+If R>16
+Goto E
+ClrDraw
+If A=1
+Text(0,35,"FERRARI
+If A=2
+Text(0,35,"JAGUAR
+If A=3
+Text(0,35,"WILLIAMS
+If A=4
+Text(0,35,"MINARDI
+If A=5
+Text(0,35,"SAUBER
+If A=6
+Text(0,35,"RENAULT
+If A=7
+Text(0,35,"MCLAREN
+If A=8
+Text(0,35,"TOYOTA
+If A=9
+Text(0,35,"JORDAN
+If A=10
+Text(0,45,"BAR
+
+Text(7,1,"MONEY:
+Text(7,40,B
+Text(14,1,"POINTS:
+Text(14,40,P
+Text(21,1,"YEAR:
+Text(21,40,J
+Text(28,1,"RACE:
+Text(28,40,R
+Text(35,1,"SPONSORS:
+Text(35,40,H
+
+If B<1
+Goto Z
+If R=1
+Text(28,50,"MELBOURNE
+If R=2
+Text(28,50,"SEPANG
+If R=3
+Text(28,50,"SAO PAULO
+If R=4
+Text(28,50,"IMOLA
+If R=5
+Text(28,50,"BARCELONA
+If R=6
+Text(28,50,"SPIELBERG
+If R=7
+Text(28,50,"MONACO
+If R=8
+Text(28,50,"MONTREAL
+If R=9
+Text(28,50,"NURBURGRING
+If R=10
+Text(28,50,"MAGNY COURS
+If R=11
+Text(28,50,"SILVERSTONE
+If R=12
+Text(28,50,"HOCKENHEIM
+If R=13
+Text(28,50,"BOEDAPEST
+If R=14
+Text(28,50,"MONZA
+If R=15
+Text(28,50,"INDIANAPOLIS
+If R=16
+Text(28,50,"SUZUKA
+
+Text(42,1,"NEXT RACE COSTS:
+Text(42,60,C-H
+Text(56,1,"[R]
+Text(56,35,"[T]
+Text(56,50,"[B]
+If R?1 and H<C
+Text(56,65,"[S]
+
+While 1
+getKey->K
+While K=0
+getKey->K
+End
+If K=14
+Goto D
+If K=11
+Goto B
+If Á<3 and K=13
+Then
+Goto S
+Else
+ClrDraw
+Text(0,1,"NO MORE TIME FOR TESTING
+For(A,0,500)
+End
+Goto A
+End
+If K=15
+Goto G
+If K=45
+ClrDraw
+AxesOn
+FnOn 
+CoordOn
+ClrHome
+Stop
+
+Lbl G
+(randInt(1,int(E+F))) ->G
+If G>30
+Then
+100000 x randInt(1,9)+H->H
+ClrDraw
+Text(0,1,"SPONSOR CONTRACTED
+For(A,0,500)
+End
+Goto A
+Else
+ClrDraw
+Text(0,1,"NO SPONSORS FOUND
+For(A,0,500)
+End
+Goto A
+End
+Lbl B
+B-C->B
+Lbl Q
+(randInt(1,int((500/E))) ->V
+(randInt(1,int((500/F))) ->W
+If W=V
+Goto Q
+
+Lbl R
+ClrDraw
+Text(0,1,"RACE-DAY:
+Text(56,1,"[DRIVE]
+
+While 1
+getKey->K
+While K=0
+getKey->K
+End
+If K=45
+Then
+ClrDraw
+AxesOn
+FnOn 
+CoordOn
+ClrHome
+Stop
+End
+If K=11
+Text(14,1,"RACE RESULTS:
+If A=1
+Then
+Text(21,1,"M SCHUMACHER"
+Text(28,1,"R BARRICHELLO
+End
+If A=2
+Then
+Text(21,1,"M WEBBER
+Text(28,1,"A PIZZONIA
+End
+If A=3
+Then
+Text(21,1,"R SCHUMACHER
+Text(28,1,"JP MONTOYA
+End
+If A=4
+Then
+Text(21,1,"J VERSTAPPEN
+Text(28,1,"J WILSON
+End
+If A=5
+Then
+Text(21,1,"H-H FRENTZEN
+Text(28,1,"N HEIDFELD
+End
+If A=6
+Then
+Text(21,1,"J TRULLI
+Text(28,1,"F ALONSO
+End
+If A=7
+Then
+Text(21,1,"D COULTHARD
+Text(28,1,"K RAIKKONEN
+End
+If A=8
+Then
+Text(21,1,"O PANIS
+Text(28,1,"C DA MATTA
+End
+If A=9
+Then
+Text(21,1,"G FISICHELLA
+Text(28,1,"R FIRMAN
+End
+If A=10
+Then
+Text(21,1,"J VILLENEUVE
+Text(28,1,"J BUTTON
+End
+Text(21,60,V
+Text(28,60,W
+If V=1 or W=1
+D+1->D
+B+(V/W) x 100000->B
+B+H->B
+R+1->R
+If V=1 or W=1
+P+10->P
+If V=2 or W=2
+P+8->P
+If V=3 or W=3
+P+6->P
+If V=4 or W=4
+P+5->P
+If V=5 or W=5
+P+4->P
+If V=6 or W=6
+P+3->P
+If V=7 or W=7
+P+2->P
+If V=8 or W=8
+P+1->P
+E-1->E
+F-1->F
+0->Á
+int(H-(H/E+F)) ->H
+
+Text(56,40,"[HOME]
+While 1
+getKey->K
+While K=0
+getKey->K
+End
+If K=13
+Goto A
+Lbl E
+ClrDraw
+Text(0,1,"END SEASON
+Text(0,40,J
+Text(7,1,"POINTS:
+Text(7,40,P
+Text(14,1,"POINTS TOTAL:
+Text(14,60,T
+1->R
+Text(21,1,"RACES WON:
+Text(21,40,D
+Text(28,1,"NEW SEASON COSTS:
+Text(28,40,N
+Text(56,1,"[NEXT SEASON]
+
+While 1
+getKey->K
+While K=0
+getKey->K
+End
+If K=11 and M<100
+Goto Z
+If K=11
+J+1->J
+0->P
+0->H
+B-N->B
+E-8->E
+F-8->F
+Goto A
+
+Lbl Z
+ClrDraw
+Text(21,40,"GAME OVER
+Text(56,1,"POINTS:
+Text(56,40,P+T
+Stop
+
+Lbl D
+ClrDraw
+Text(0,1,"DESIGN
+Text(14,1,"1."
+Text(14,5,(J+1)
+Text(14,10,"CAR
+Text(14,50,M
+Text(56,1,"[BACK]
+
+While 1
+getKey->K
+While K=0
+getKey->K
+End
+If K=11
+Goto A
+If K=92
+Then
+randInt(1,int(500/(E+F))) ->X
+If X>3 and M<100
+Then
+M+10->M
+B-U->B
+Goto D
+End
+
+Lbl S
+ClrDraw
+Text(0,1,"TESTING COST:
+Text(0,50,U)
+Text(14,1,"ARE YOU SURE?
+Text(56,1,"[YES]
+Text(56,40,"[NO]
+
+While 1
+getKey->K
+While K=0
+getKey->K
+End
+If K=11
+Then
+(int(randInt(1,8)) ->X
+(int(randInt(1,8)) ->Y
+E+X
+F+Y
+B-U->B
+?+1->?
+If X>4 or Y>4
+Then
+Text(28,1,"TEAM HAS IMPROVED
+Else
+Text(28,1,"TEAM HAS NOT IMPROVED
+End
+For(A,0,800)
+End
+Goto A
+Else
+If K=13
+Goto A
+If K=45
+ClrDraw
+AxesOn
+CoordOn
+FnOn 
+ClrHome
