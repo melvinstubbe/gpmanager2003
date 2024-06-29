@@ -12,7 +12,7 @@ Below is the original manual of the game from back in 2003.
 
 ### The Money
 
-This game is all about money and luck. Even for those who aren't F1 fans this game will be nice to play. You can get money by racing. The higher you finish, the higher the prize money. Another source of money are your sponsors. After the first race you will see that you can press [F6] to look for a sponsor. You can see how much the next race will cost you. Sponsors won't come when you don't have much points. This makes scoring points essential to survive. When you're out of cash, you are Game Over.
+This game is all about money and luck. Even for those who aren't F1 fans this game will be nice to play. You can get money by racing. The higher you finish, the higher the prize money. Another source of money are your sponsors. After the first race you will see that you can press [F6] ([graph] on the TI-83) to look for a sponsor. You can see how much the next race will cost you. Sponsors won't come when you don't have much points. This makes scoring points essential to survive. When you're out of cash, you are Game Over.
 
 ### The Teams
 
@@ -36,7 +36,9 @@ Since the save game option is available, you can change almost everything in you
 
 For example: You were game over and you want to continue with your team (could be realistic). You go to your main calculator screen (number 1 from the menu) and press any number following `-> B` (B=budget, the money you have. F.E. `10 -> B`) If you now start the game and load your previous game, you will have tha amount of money. The you can re-develop your team (even if you were game over).
 
-I'm not going to tell what letter is for what thing in the game, you'll find out as you try.  
+I'm not going to tell what letter is for what thing in the game, you'll find out as you try.
+
+In the TI-83 version there are no cheats, but you can always press [graph] to find sponsors (even if it's disabled).
 
 ### Known bugs
 
