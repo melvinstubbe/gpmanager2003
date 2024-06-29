@@ -1,5 +1,7 @@
 # Grand Prix Manager 2003 for CASIO CFX-9850 GB Plus and Texas TI-83 calculators
 
+![Image of the CASIO CFX-9850 GB Plus calculator](casio_cfx-9850gb_plus.jpg "The CASIO CFX-9850 GB Plus calculator")
+
 Grand Prix Manager 2003 is a game I wrote for the CASIO CFX-9850 GB Plus calculator back in 2003 during math classes in high school. You'll find the source code [here](gpmanager2003.txt) and the TI-83 port [here](gpm03ti83.txt). I even made a [demo version](gpm2003-demo.txt) (so you don't have to type the source code of the full game into your calculator), where you can play with only four teams. See the installation instructions below on how to get it on your calculator.
 
 I decided to put the source code on Github for my own archive and for the world to see my first steps in programming.
