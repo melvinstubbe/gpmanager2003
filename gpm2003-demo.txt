@@ -1,0 +1,230 @@
+ViewWindow 1,127,0,1,63,0
+ClrGraph
+ClrText
+Green Text 1,22,"Grand Prix Manager"
+2003 -> J
+0 -> P
+1 -> R
+0 -> T
+0 -> H
+0 -> K
+0 -> D
+0 -> A
+0 -> r
+Orange Text 10,1,"Choose Team:"
+Text 18,1,"1=Ferrari"
+Text 18,50,"2=Jaguar"
+Text 26,1,"3=Williams"
+Text 26,50,"4=Minardi"
+Orange Text 58,1,"Press number"
+Do
+LpWhile Getkey <> 72 And Getkey <> 62 And Getkey <> 52 And Getkey <> 73
+Getkey -> K
+If K = 72
+Then 1 -> A
+IfEnd
+If K = 62
+Then 2 -> A
+IfEnd
+If K = 52
+Then 3 -> A
+IfEnd
+If K = 73
+Then 4 -> A
+Lbl A
+ClrGraph
+ClrText
+If R > 16
+Then Goto E
+IfEnd
+If A = 1
+Then 15000000 -> B
+2000000 -> C
+5000000 -> N
+70 -> E
+65 -> F
+1000000 -> U
+IfEnd
+If A = 2
+Then 12500000 -> B
+1000000 -> C
+6000000 -> N
+48 -> E
+61 -> F
+2000000 -> U
+IfEnd
+If A = 3
+Then 10000000 -> B
+2000000 -> C
+5000000 -> N
+39 -> E
+35 -> F
+1000000 -> U
+IfEnd
+If A = 4
+Then 5000000 -> B
+500000 -> C
+1000000 -> N
+43 -> E
+40 -> F
+500000 -> U
+IfEnd
+Lbl A
+ClrGraph
+ClrText
+If R > 16
+Then Goto E
+IfEnd
+If A = 1
+Then Text 1,45,"Ferrari"
+IfEnd
+If A = 2
+Then Text 1,45,"Jaguar"
+IfEnd
+If A = 3
+Then Text 1,45,"Williams"
+IfEnd
+If A = 4
+Then Text 1,45,"Minardi"
+IfEnd
+Orange Text 10,1,"Money:"
+Text 10,35,B
+Orange Text 16,1,"Points:"
+Text 16,35,P
+Orange Text 22,1,"Year:"
+Text 22,35,J
+Orange Text 28,1,"Race:"
+Text 28,35,R
+Orange Text 35,1,"Sponsors:"
+Text 34,45,H
+If B<1
+Then Goto Z
+Ifend
+Orange Text 50,1,"Next rae cost:"
+Text 50,65,C-H
+Green Text 58,1,"[F1]=Race"
+Green Text 58,40,"[F2]=Test"
+If R <> 1 And H<C
+Then Green Text 58,60,"[F6]=Sponsor"
+IfEnd
+Do
+LpWhile Getkey <> 79 And Getkey <> 69 And Getkey <> 29
+Getkey -> K
+If K = 79
+Then Goto B
+Ifend
+If r < 3 And K = 69
+Then Goto S
+Else Goto A
+IfEnd
+If K = 29
+Then Goto G
+IfEnd
+Lbl G
+Intg (E+F)Ran#+1 -> G
+If G > R
+Then 100000xIntg (9Ran#+1)+H -> H
+IfEnd
+Goto A
+Lbl B
+ClrGraph
+ClrText
+B-C -> B
+Lbl Q
+Intg (500 : E)Ran#+1 -> V
+Intg (500 : F)Ran#+1 -> W
+If W=V
+Then Goto Q
+IfEnd
+Lbl R
+ClrGraph
+ClrText
+Orange Text 1,25,"Race-Day"
+Orange Text 17,1,"[F1]=Race Results"
+Do
+LpWhile Getkey <> 79
+ClrGraph
+ClrText
+Orange Text 1,1,"Race Results"
+Green Text 9,1,"Driver 1"
+Green Text 8,1,"Driver 2"
+Text 9,65,V
+Text 18,65,W
+If V=1 Or W=1
+Then D+1 -> D
+Ifend
+B+(V:W)x100000 -> B
+B+H -> B
+R+1 -> R
+If V=1 or W=1
+Then P+10 -> P
+Ifend
+If V=2 or W=2
+Then P+8 -> P
+Ifend
+If V=3 or W=3
+Then P+6 -> P
+Ifend
+If V=4 or W=4
+Then P+5 -> P
+Ifend
+If V=5 or W=5
+Then P+4 -> P
+Ifend
+If V=6 or W=6
+Then P+3 -> P
+Ifend
+If V=7 or W=7
+Then P+2 -> P
+Ifend
+If V=8 or W=8
+Then P+1 -> P
+Ifend
+E - 1 -> E
+F - 1 -> F
+0 -> r
+Text 58,1,"[F1]=Home"
+Do
+LpWhile Getkey <> 79
+Goto A
+Lbl E
+ClrGraph
+ClrText
+Orange Text 1,1,"End Season"
+Orange Text 1,55,"J
+Green Text 10,1,"Points:"
+Text 10,65,P
+1 -> R
+Green Text 28,1,"Races Won:"
+Text 28,70,D
+Lbl Z
+ClrText
+ClrGraph
+"Game Over"
+"Points:"
+P+T
+Stop
+Lbl S
+ClrText
+ClrGraph
+Orange Text 1,1,"Testing Cost:"
+Text 1,80,U
+Text 10,1,"Are you sure?"
+Green Text 58,1,"Yes"
+Green Text 58,115,"No"
+Do
+LpWhile Getkey <> 79 And Getkey <> 29
+Getkey -> K
+If K = 79
+Then (Intg 8Ran# +1) -> X
+(Intg 8Ran# +1) -> Y
+E+X
+F+Y
+IfEnd
+B - U -> B
+r + 1 -> r
+If X > 0 Or Y > 0
+Then Orange Text 40,1,"Team has improved"
+For 1 -> Z To 100
+Next
+Goto A
