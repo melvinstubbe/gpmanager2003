@@ -1,0 +1,442 @@
+ClrText
+"   Stubbe Presents:"
+For 1 -> A To 200
+Next
+ClrText
+"Grand Prix Manager"
+"     2003"
+For 1 -> A To 200
+Next
+
+ViewWindow 1,127,0,1,63,0
+ClrGraph
+ClrText
+Green Text 1,15,"Grand Prix Manager 2003"
+Orange Text 10,1,"Choose Team:"
+Text 18,1,"1=Ferrari"
+Text 18,50,"2=Williams"
+Text 26,1,"3=McLaren"
+Text 26,50,"4=Renault"
+Text 34,1,"5=Jaguar"
+Text 34,50,"6=Sauber"
+Text 42,1,"7=Jordan"
+Text 42,50,"8=BAR"
+Text 50,1,"9=Toyota"
+Text 50,50,"0=Minardi"
+Orange Text 58,1,"Press number"
+Orange Text 58,60,"[F3]=LOAD GAME"
+Do
+Getkey -> K
+LpWhile K = 0
+K = 72 => 1 -> A
+If K = 62
+Then 2 -> A
+IfEnd
+If K = 52
+Then 3 -> A
+IfEnd
+If K = 73
+Then 4 -> A
+IfEnd
+If K = 63
+Then 5 -> A
+IfEnd
+If K = 53
+Then 6 -> A
+IfEnd
+If K = 74
+Then 7 -> A
+IfEnd
+If K = 64
+Then 8 -> A
+IfEnd
+If K = 54
+Then 9 -> A
+IfEnd
+If K = 71
+Then 10 -> A
+IfEnd
+If K = 59 
+Then Goto A
+IfEnd     
+0 -> P    
+1 -> R    
+0 -> T
+0 -> H    
+0 -> K    
+0 -> D    
+0 -> r    
+2003 -> J 
+If A = 1
+Then 80000000 -> B 
+3000000 -> C    
+5000000 -> N   
+5 -> E    
+7 -> F  
+400000 -> U 
+IfEnd
+If A = 2
+Then 50000000 -> B
+2000000 -> C
+5000000 -> N
+5 -> E
+5 -> F
+2000000 -> U
+IfEnd
+If A = 3
+Then 30000000 -> B
+5000000 -> C
+8000000 -> N
+6 -> E
+8 -> F
+1000000 -> U
+IfEnd
+If A = 4
+Then 4500000 -> B
+5000000 -> C
+4000000 -> N
+6 -> E
+6 -> F
+1000000 -> U
+IfEnd
+If A = 5
+Then 20000000 -> B
+1000000 -> C
+2000000 -> N
+8 -> E
+10 -> F
+1000000 -> U
+IfEnd
+If A = 6
+Then 8000000 -> B
+800000 -> C
+1000000 -> N
+12 -> E
+12 -> F
+500000 -> U
+IfEnd
+If A = 7
+Then 2500000 -> B
+800000 -> C
+1000000 -> N
+8 -> E
+13 -> F
+300000 -> U
+IfEnd
+If A = 8
+Then 70000000 -> B
+3000000 -> C
+5000000 -> N
+15 -> E
+13 -> F
+400000 -> U
+IfEnd
+If A = 9
+Then 50000000 -> B
+5000000 -> C
+4000000 -> N
+14 -> E
+18 -> F
+2000000 -> U
+IfEnd
+If A = 10
+Then 800000 -> B
+500000 -> C
+800000 -> N
+15 -> E
+18 -> F
+250000 -> U
+IfEnd
+
+Lbl A
+ClrGraph
+ClrText
+If R > 16
+Then Goto E
+IfEnd
+If A = 1
+Then Text 1,45,"Ferrari"
+IfEnd
+If A = 2
+Then Text 1,45,"Williams"
+IfEnd
+If A = 3
+Then Text 1,45,"McLaren"
+IfEnd
+If A = 4
+Then Text 1,45,"Renault"
+IfEnd
+If A = 5
+Then Text 1,45,"Jaguar"
+IfEnd
+If A = 6
+Then Text 1,45,"Sauber"
+IfEnd
+If A = 7
+Then Text 1,45,"Jordan"
+IfEnd
+If A = 8
+Then Text 1,45,"BAR"
+IfEnd
+If A = 9
+Then Text 1,45,"Toyota"
+IfEnd
+If A = 10
+Then Text 1,45,"Minardi"
+IfEnd
+Orange Text 10,1,"Money:"
+Text 10,35,B
+Orange Text 16,1,"Points:"
+Text 16,35,P
+Orange Text 22,1,"Year:"
+Text 22,35,J
+Orange Text 28,1,"Race:"
+Text 28,35,R
+Orange Text 35,1,"Sponsors:"
+Text 34,45,H
+If B<1
+Then Goto Z
+Ifend
+If R = 1
+Then Text 28,45,"Melbourne"
+Ifend
+If R = 2
+Then Text 28,45,"Sepang"
+Ifend
+If R = 3
+Then Text 28,45,"Sao Paulo"
+Ifend
+If R = 4
+Then Text 28,45,"Imola"
+Ifend
+If R = 5
+Then Text 28,45,"Barcelona"
+Ifend
+If R = 6
+Then Text 28,45,"Spielberg"
+Ifend
+If R = 7
+Then Text 28,45,"Monaco"
+Ifend
+If R = 8
+Then Text 28,45,"Montreal"
+Ifend
+If R = 9
+Then Text 28,45,"Nurburgring"
+Ifend
+If R = 10
+Then Text 28,45,"Magny Cours"
+Ifend
+If R = 11
+Then Text 28,45,"Silverstone"
+Ifend
+If R = 12
+Then Text 28,45,"Hockenheim"
+Ifend
+If R = 13
+Then Text 28,45,"Boedapest"
+Ifend
+If R = 14
+Then Text 28,45,"Monza"
+Ifend
+If R = 15
+Then Text 28,45,"Indianapolis"
+Ifend
+If R = 16
+Then Text 28,45,"Suzuka"
+Ifend
+Orange Text 50,1,"Next rae cost:"
+Text 50,65,C-H
+Green Text 58,1,"[F1]=Race"
+Green Text 58,40,"[F2]=Test"
+If R <> 1 And H<C
+Then Green Text 58,60,"[F6]=Sponsor"
+IfEnd
+Do
+LpWhile Getkey <> 79 And Getkey <> 69 And Getkey <> 29
+Getkey -> K
+If K = 79
+Then Goto B
+Ifend
+If r < 3 And K = 69
+Then Goto S
+Else Goto A
+IfEnd
+If K = 29
+Then Goto G
+IfEnd
+
+Lbl G
+Intg 1000000xIntg (9Ran#+1)+H -> H
+IfEnd
+Goto A
+
+Lbl B
+ClrGraph
+ClrText
+B-C -> B
+
+Lbl Q
+Intg (E + 2)Ran#+(E - 5) -> V
+Intg (F + 2)Ran#+(F - 5) -> W
+If W=V
+Then Goto Q
+IfEnd
+Lbl R
+ClrGraph
+ClrText
+Orange Text 1,25,"Race-Day"
+Orange Text 17,1,"[F1]=Race Results"
+Do
+LpWhile Getkey <> 79
+ClrGraph
+ClrText
+Orange Text 1,1,"Race Results"
+If A=1
+Then Green Text 9,1,"M Schumacher"
+Green Text 8,1,"R Barrichello"
+IfEnd
+If A=2
+Then Green Text 9,1,"R Schumacher"
+Green Text 8,1,"JP Montoya"
+IfEnd
+If A=3
+Then Green Text 9,1,"K Raikonen"
+Green Text 8,1,"D Coulthard"
+IfEnd
+If A=4
+Then Green Text 9,1,"J Trulli"
+Green Text 8,1,"F Alonso"
+IfEnd
+If A=5
+Then Green Text 9,1,"M Webber"
+Green Text 8,1,"J Wilson"
+IfEnd
+If A=6
+Then Green Text 9,1,"H-H Frentzen"
+Green Text 8,1,"N Heidfeld"
+IfEnd
+If A=7
+Then Green Text 9,1,"G Fisichella"
+Green Text 8,1,"TBA"
+IfEnd
+If A=8
+Then Green Text 9,1,"J Villeneuve"
+Green Text 8,1,"J Button"
+IfEnd
+If A=9
+Then Green Text 9,1,"O Panis"
+Green Text 8,1,"C Da Matta"
+IfEnd
+If A=10
+Then Green Text 9,1,"J Verstappen"
+Green Text 8,1,"N Kiesa"
+IfEnd
+If V < 16
+Then Text 9,65,V
+IfEnd
+If V > 15
+Then Text 9,65,"DNF"
+IfEnd
+If W < 16
+Then Text 9,65,V
+IfEnd
+If W > 15
+Then Text 9,65,"DNF"
+IfEnd
+Text 9,65,V
+Text 18,65,W
+If V=1 Or W=1
+Then D+1 -> D
+Ifend
+B+VW100000 -> B
+B+H -> B
+R+1 -> R
+If V=1 or W=1
+Then P+10 -> P
+Ifend
+If V=2 or W=2
+Then P+8 -> P
+Ifend
+If V=3 or W=3
+Then P+6 -> P
+Ifend
+If V=4 or W=4
+Then P+5 -> P
+Ifend
+If V=5 or W=5
+Then P+4 -> P
+Ifend
+If V=6 or W=6
+Then P+3 -> P
+Ifend
+If V=7 or W=7
+Then P+2 -> P
+Ifend
+If V=8 or W=8
+Then P+1 -> P
+Ifend
+E + 1 -> E
+F + 1 -> F
+0 -> r
+Text 58,1,"[F1]=Home"
+Do
+LpWhile Getkey <> 79
+Goto A
+Lbl E
+ClrGraph
+ClrText
+Orange Text 1,1,"End Season"
+Orange Text 1,55,"J
+Green Text 10,1,"Points:"
+Text 10,65,P
+Green Text 18,1,"Points total:"
+Text 18,65,T
+1 -> R
+Green Text 28,1,"Races Won:"
+Text 28,70,D
+Green Text 35,1,"New Seaon Costs:"
+Text 35,70,N
+Orange Text 58,1,"[F2]=Next Season"
+Do
+LpWhile Getkey <> 69
+J+1 -> J
+0 -> P
+H > 0 => H - (H X 2 : 3) -> H
+B-N -> B
+E + 5 -> E
+F + 5 -> F
+Goto A
+
+Lbl Z
+ClrText
+ClrGraph
+"Game Over"
+"Points:"
+P+T
+Stop
+
+Lbl S
+ClrText
+ClrGraph
+Orange Text 1,1,"Testing Cost:"
+Text 1,80,U
+Text 10,1,"Are you sure?"
+Green Text 58,1,"Yes"
+Green Text 58,115,"No"
+Do
+LpWhile Getkey <> 79 And Getkey <> 29
+Getkey -> K
+If K = 79
+Then (Intg 3Ran# +1) -> X
+(Intg 3Ran# +1) -> Y
+E > 5 => E - X -> E
+F > 5 => F - Y -> F
+IfEnd
+B - U -> B
+r + 1 -> r
+If X > 0 Or Y > 0
+Then Orange Text 40,1,"Team has improved"
+For 1 -> Z To 200
+Next
+Goto A
