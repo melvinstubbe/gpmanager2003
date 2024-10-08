@@ -245,7 +245,7 @@ Ifend
 If R = 16
 Then Text 28,45,"Suzuka"
 Ifend
-Orange Text 50,1,"Next rae cost:"
+Orange Text 50,1,"Next race cost:"
 Text 50,65,C-H
 Green Text 58,1,"[F1]=Race"
 Green Text 58,40,"[F2]=Test"
@@ -282,6 +282,7 @@ Intg (F + 2)Ran#+(F - 5) -> W
 If W=V
 Then Goto Q
 IfEnd
+
 Lbl R
 ClrGraph
 ClrText
@@ -383,6 +384,7 @@ Text 58,1,"[F1]=Home"
 Do
 LpWhile Getkey <> 79
 Goto A
+
 Lbl E
 ClrGraph
 ClrText
